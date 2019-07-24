@@ -16,5 +16,17 @@ namespace DollarComputers
         {
             InitializeComponent();
         }
+        private void SpalshForm_Load(object sender, EventArgs e)
+        {
+            splashTimer.Enabled = true;
+        }
+        private void splashTimer_Tick(object sender, EventArgs e)
+        {
+            splashTimer.Enabled = false;
+            Program.startForm.Show();
+            this.Hide();
+        }
+
+        
     }
 }

@@ -6,6 +6,13 @@ using System.Windows.Forms;
 
 namespace DollarComputers
 {
+    /// <summary>
+    /// Project Updates: 
+    /// 22 JJuly 2019: Initial Commit .. Creating All The forms.
+    /// </summary>
+
+
+
     static class Program
     {
         public static SpalshForm spalshForm;
@@ -13,7 +20,7 @@ namespace DollarComputers
         public static ProductInfoForm productInfoForm;
         public static SelectForm selectForm;
         public static StartForm startForm;
-        
+        public static AboutBox aboutBox;
 
         /// <summary>
         /// The main entry point for the application.
@@ -29,6 +36,7 @@ namespace DollarComputers
             productInfoForm = new ProductInfoForm();
             selectForm = new SelectForm();
             startForm = new StartForm();
+            aboutBox = new AboutBox();
             Application.Run(new SpalshForm());
         }
     }
