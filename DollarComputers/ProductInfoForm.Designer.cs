@@ -67,9 +67,14 @@
             this.webCamTextBox = new System.Windows.Forms.TextBox();
             this.gpuTypeTextBox = new System.Windows.Forms.TextBox();
             this.hddTextBox = new System.Windows.Forms.TextBox();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.headerGroupBox.SuspendLayout();
             this.productInfogroupBox.SuspendLayout();
             this.techSpecsGroupBox.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // headerGroupBox
@@ -80,15 +85,15 @@
             this.headerGroupBox.Controls.Add(this.costLabel);
             this.headerGroupBox.Controls.Add(this.conditionLabel);
             this.headerGroupBox.Controls.Add(this.productIDLabel);
-            this.headerGroupBox.Location = new System.Drawing.Point(8, 12);
+            this.headerGroupBox.Location = new System.Drawing.Point(8, 27);
             this.headerGroupBox.Name = "headerGroupBox";
-            this.headerGroupBox.Size = new System.Drawing.Size(573, 63);
+            this.headerGroupBox.Size = new System.Drawing.Size(573, 48);
             this.headerGroupBox.TabIndex = 1;
             this.headerGroupBox.TabStop = false;
             // 
             // productIDLabel
             // 
-            this.productIDLabel.Location = new System.Drawing.Point(6, 26);
+            this.productIDLabel.Location = new System.Drawing.Point(6, 20);
             this.productIDLabel.Name = "productIDLabel";
             this.productIDLabel.Size = new System.Drawing.Size(61, 13);
             this.productIDLabel.TabIndex = 1;
@@ -97,7 +102,7 @@
             // conditionLabel
             // 
             this.conditionLabel.AutoSize = true;
-            this.conditionLabel.Location = new System.Drawing.Point(221, 30);
+            this.conditionLabel.Location = new System.Drawing.Point(215, 24);
             this.conditionLabel.Name = "conditionLabel";
             this.conditionLabel.Size = new System.Drawing.Size(51, 13);
             this.conditionLabel.TabIndex = 2;
@@ -106,7 +111,7 @@
             // costLabel
             // 
             this.costLabel.AutoSize = true;
-            this.costLabel.Location = new System.Drawing.Point(413, 30);
+            this.costLabel.Location = new System.Drawing.Point(410, 24);
             this.costLabel.Name = "costLabel";
             this.costLabel.Size = new System.Drawing.Size(28, 13);
             this.costLabel.TabIndex = 3;
@@ -114,21 +119,21 @@
             // 
             // productIDTextBox
             // 
-            this.productIDTextBox.Location = new System.Drawing.Point(464, 23);
+            this.productIDTextBox.Location = new System.Drawing.Point(462, 17);
             this.productIDTextBox.Name = "productIDTextBox";
             this.productIDTextBox.Size = new System.Drawing.Size(100, 20);
             this.productIDTextBox.TabIndex = 4;
             // 
             // conditionTextBox
             // 
-            this.conditionTextBox.Location = new System.Drawing.Point(286, 23);
+            this.conditionTextBox.Location = new System.Drawing.Point(290, 17);
             this.conditionTextBox.Name = "conditionTextBox";
             this.conditionTextBox.Size = new System.Drawing.Size(96, 20);
             this.conditionTextBox.TabIndex = 5;
             // 
             // costTextBox
             // 
-            this.costTextBox.Location = new System.Drawing.Point(100, 23);
+            this.costTextBox.Location = new System.Drawing.Point(91, 17);
             this.costTextBox.Name = "costTextBox";
             this.costTextBox.Size = new System.Drawing.Size(100, 20);
             this.costTextBox.TabIndex = 6;
@@ -378,6 +383,7 @@
             this.nextButton.TabIndex = 5;
             this.nextButton.Text = "&Next";
             this.nextButton.UseVisualStyleBackColor = true;
+            this.nextButton.Click += new System.EventHandler(this.nextButton_Click);
             // 
             // cancelButton
             // 
@@ -387,6 +393,7 @@
             this.cancelButton.TabIndex = 6;
             this.cancelButton.Text = "&Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
             // selectAnotherProductButton
             // 
@@ -396,6 +403,7 @@
             this.selectAnotherProductButton.TabIndex = 7;
             this.selectAnotherProductButton.Text = "&Select Another Product";
             this.selectAnotherProductButton.UseVisualStyleBackColor = true;
+            this.selectAnotherProductButton.Click += new System.EventHandler(this.selectAnotherProductButton_Click);
             // 
             // webCamTextBox
             // 
@@ -418,6 +426,37 @@
             this.hddTextBox.Size = new System.Drawing.Size(100, 20);
             this.hddTextBox.TabIndex = 23;
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem,
+            this.editToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(584, 24);
+            this.menuStrip1.TabIndex = 8;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // fileToolStripMenuItem
+            // 
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.openToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Text = "File";
+            // 
+            // editToolStripMenuItem
+            // 
+            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
+            this.editToolStripMenuItem.Text = "Edit";
+            // 
+            // openToolStripMenuItem
+            // 
+            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.openToolStripMenuItem.Text = "Open";
+            // 
             // ProductInfoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -430,16 +469,21 @@
             this.Controls.Add(this.techSpecsGroupBox);
             this.Controls.Add(this.productInfogroupBox);
             this.Controls.Add(this.headerGroupBox);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "ProductInfoForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "ProductInfoForm";
+            this.Text = "Product Info ";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ProductInfoForm_FormClosing);
             this.headerGroupBox.ResumeLayout(false);
             this.headerGroupBox.PerformLayout();
             this.productInfogroupBox.ResumeLayout(false);
             this.productInfogroupBox.PerformLayout();
             this.techSpecsGroupBox.ResumeLayout(false);
             this.techSpecsGroupBox.PerformLayout();
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -486,5 +530,9 @@
         private System.Windows.Forms.TextBox webCamTextBox;
         private System.Windows.Forms.TextBox gpuTypeTextBox;
         private System.Windows.Forms.TextBox hddTextBox;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
     }
 }

@@ -16,5 +16,33 @@ namespace DollarComputers
         {
             InitializeComponent();
         }
+
+        private void OrderForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+
+        }
+
+        private void OrderForm_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void backButton_Click(object sender, EventArgs e)
+        {
+            Program.productInfoForm.Show();
+            this.Hide();
+
+        }
+
+        private void finishButton_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Thank you for shopping with us, your order will be processed in 7 - 10 business days");
+        }
+
+        private void cancelButton_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

@@ -9,6 +9,8 @@ namespace DollarComputers
     /// <summary>
     /// Project Updates: 
     /// 22 JJuly 2019: Initial Commit .. Creating All The forms.
+    /// 23 July 2019: Finishing The Design of The Forms and controls
+    /// 
     /// </summary>
 
 
