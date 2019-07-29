@@ -32,5 +32,11 @@ namespace DollarComputers
         {
             Application.Exit();
         }
+
+        private void loadSavedOrderBtn_Click(object sender, EventArgs e)
+        {
+            Program.mainForm.Show();
+            this.Hide();
+        }
     }
 }

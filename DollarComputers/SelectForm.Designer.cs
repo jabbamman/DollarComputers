@@ -31,14 +31,6 @@
             this.components = new System.ComponentModel.Container();
             this.headerLbl = new System.Windows.Forms.Label();
             this.productsDataGridView = new System.Windows.Forms.DataGridView();
-            this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dollarComputerDataSet = new DollarComputers.DollarComputerDataSet();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.selectionLble = new System.Windows.Forms.Label();
-            this.nextButton = new System.Windows.Forms.Button();
-            this.cancelButton = new System.Windows.Forms.Button();
-            this.productsTableAdapter = new DollarComputers.DollarComputerDataSetTableAdapters.productsTableAdapter();
-            this.button1 = new System.Windows.Forms.Button();
             this.productIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.costDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.manufacturerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -70,6 +62,14 @@
             this.mousttypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.powerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.webcamDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.productsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dollarComputerDataSet = new DollarComputers.DollarComputerDataSet();
+            this.selectionLble = new System.Windows.Forms.Label();
+            this.nextButton = new System.Windows.Forms.Button();
+            this.cancelButton = new System.Windows.Forms.Button();
+            this.productsTableAdapter = new DollarComputers.DollarComputerDataSetTableAdapters.productsTableAdapter();
+            this.selectionLable = new System.Windows.Forms.Label();
+            this.productSaveFileDialog = new System.Windows.Forms.SaveFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.productsDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.productsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dollarComputerDataSet)).BeginInit();
@@ -127,67 +127,7 @@
             this.productsDataGridView.Name = "productsDataGridView";
             this.productsDataGridView.Size = new System.Drawing.Size(763, 457);
             this.productsDataGridView.TabIndex = 1;
-            // 
-            // productsBindingSource
-            // 
-            this.productsBindingSource.DataMember = "products";
-            this.productsBindingSource.DataSource = this.dollarComputerDataSet;
-            // 
-            // dollarComputerDataSet
-            // 
-            this.dollarComputerDataSet.DataSetName = "DollarComputerDataSet";
-            this.dollarComputerDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(128, 529);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(275, 20);
-            this.textBox1.TabIndex = 2;
-            // 
-            // selectionLble
-            // 
-            this.selectionLble.AutoSize = true;
-            this.selectionLble.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.selectionLble.Location = new System.Drawing.Point(22, 529);
-            this.selectionLble.Name = "selectionLble";
-            this.selectionLble.Size = new System.Drawing.Size(100, 17);
-            this.selectionLble.TabIndex = 3;
-            this.selectionLble.Text = "Your Selection";
-            // 
-            // nextButton
-            // 
-            this.nextButton.Location = new System.Drawing.Point(511, 526);
-            this.nextButton.Name = "nextButton";
-            this.nextButton.Size = new System.Drawing.Size(75, 23);
-            this.nextButton.TabIndex = 4;
-            this.nextButton.Text = "Next";
-            this.nextButton.UseVisualStyleBackColor = true;
-            this.nextButton.Click += new System.EventHandler(this.nextButton_Click);
-            // 
-            // cancelButton
-            // 
-            this.cancelButton.Location = new System.Drawing.Point(430, 526);
-            this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(75, 23);
-            this.cancelButton.TabIndex = 5;
-            this.cancelButton.Text = "Cancel";
-            this.cancelButton.UseVisualStyleBackColor = true;
-            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
-            // 
-            // productsTableAdapter
-            // 
-            this.productsTableAdapter.ClearBeforeFill = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(328, 500);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Cancel";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.productsDataGridView.SelectionChanged += new System.EventHandler(this.productsDataGridView_SelectionChanged);
             // 
             // productIDDataGridViewTextBoxColumn
             // 
@@ -407,16 +347,69 @@
             this.webcamDataGridViewTextBoxColumn.Name = "webcamDataGridViewTextBoxColumn";
             this.webcamDataGridViewTextBoxColumn.Width = 41;
             // 
+            // productsBindingSource
+            // 
+            this.productsBindingSource.DataMember = "products";
+            this.productsBindingSource.DataSource = this.dollarComputerDataSet;
+            // 
+            // dollarComputerDataSet
+            // 
+            this.dollarComputerDataSet.DataSetName = "DollarComputerDataSet";
+            this.dollarComputerDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // selectionLble
+            // 
+            this.selectionLble.AutoSize = true;
+            this.selectionLble.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.selectionLble.Location = new System.Drawing.Point(22, 529);
+            this.selectionLble.Name = "selectionLble";
+            this.selectionLble.Size = new System.Drawing.Size(100, 17);
+            this.selectionLble.TabIndex = 3;
+            this.selectionLble.Text = "Your Selection";
+            // 
+            // nextButton
+            // 
+            this.nextButton.Location = new System.Drawing.Point(697, 523);
+            this.nextButton.Name = "nextButton";
+            this.nextButton.Size = new System.Drawing.Size(75, 23);
+            this.nextButton.TabIndex = 4;
+            this.nextButton.Text = "Next";
+            this.nextButton.UseVisualStyleBackColor = true;
+            this.nextButton.Click += new System.EventHandler(this.nextButton_Click);
+            // 
+            // cancelButton
+            // 
+            this.cancelButton.Location = new System.Drawing.Point(616, 523);
+            this.cancelButton.Name = "cancelButton";
+            this.cancelButton.Size = new System.Drawing.Size(75, 23);
+            this.cancelButton.TabIndex = 5;
+            this.cancelButton.Text = "Cancel";
+            this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
+            // 
+            // productsTableAdapter
+            // 
+            this.productsTableAdapter.ClearBeforeFill = true;
+            // 
+            // selectionLable
+            // 
+            this.selectionLable.BackColor = System.Drawing.Color.White;
+            this.selectionLable.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.selectionLable.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.selectionLable.Location = new System.Drawing.Point(132, 523);
+            this.selectionLable.Name = "selectionLable";
+            this.selectionLable.Size = new System.Drawing.Size(478, 23);
+            this.selectionLable.TabIndex = 7;
+            // 
             // SelectForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.selectionLable);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.nextButton);
             this.Controls.Add(this.selectionLble);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.productsDataGridView);
             this.Controls.Add(this.headerLbl);
             this.MaximizeBox = false;
@@ -437,14 +430,12 @@
 
         private System.Windows.Forms.Label headerLbl;
         private System.Windows.Forms.DataGridView productsDataGridView;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label selectionLble;
         private System.Windows.Forms.Button nextButton;
         private System.Windows.Forms.Button cancelButton;
         private DollarComputerDataSet dollarComputerDataSet;
         private System.Windows.Forms.BindingSource productsBindingSource;
         private DollarComputerDataSetTableAdapters.productsTableAdapter productsTableAdapter;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridViewTextBoxColumn productIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn costDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn manufacturerDataGridViewTextBoxColumn;
@@ -476,5 +467,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn mousttypeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn powerDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn webcamDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label selectionLable;
+        private System.Windows.Forms.SaveFileDialog productSaveFileDialog;
     }
 }

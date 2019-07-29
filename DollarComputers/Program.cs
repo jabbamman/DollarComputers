@@ -10,6 +10,7 @@ namespace DollarComputers
     /// Project Updates: 
     /// 22 JJuly 2019: Initial Commit .. Creating All The forms.
     /// 23 July 2019: Finishing The Design of The Forms and controls
+    /// 25 July 2019: Connect the SelectForm to db.
     /// 
     /// </summary>
 
@@ -23,6 +24,9 @@ namespace DollarComputers
         public static SelectForm selectForm;
         public static StartForm startForm;
         public static AboutBox aboutBox;
+        public static MainForm mainForm;
+        public static ProductInfoClass ProductInfoClass;
+     
 
         /// <summary>
         /// The main entry point for the application.
@@ -39,6 +43,8 @@ namespace DollarComputers
             selectForm = new SelectForm();
             startForm = new StartForm();
             aboutBox = new AboutBox();
+            mainForm = new MainForm();
+            ProductInfoClass = new ProductInfoClass();
             Application.Run(new SpalshForm());
         }
     }

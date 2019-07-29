@@ -35,9 +35,10 @@
             // 
             // startNewOrderBtn
             // 
-            this.startNewOrderBtn.Location = new System.Drawing.Point(178, 138);
+            this.startNewOrderBtn.Location = new System.Drawing.Point(326, 255);
+            this.startNewOrderBtn.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.startNewOrderBtn.Name = "startNewOrderBtn";
-            this.startNewOrderBtn.Size = new System.Drawing.Size(120, 23);
+            this.startNewOrderBtn.Size = new System.Drawing.Size(220, 42);
             this.startNewOrderBtn.TabIndex = 0;
             this.startNewOrderBtn.Text = "&Start new order";
             this.startNewOrderBtn.UseVisualStyleBackColor = true;
@@ -45,18 +46,21 @@
             // 
             // loadSavedOrderBtn
             // 
-            this.loadSavedOrderBtn.Location = new System.Drawing.Point(178, 167);
+            this.loadSavedOrderBtn.Location = new System.Drawing.Point(326, 308);
+            this.loadSavedOrderBtn.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.loadSavedOrderBtn.Name = "loadSavedOrderBtn";
-            this.loadSavedOrderBtn.Size = new System.Drawing.Size(120, 23);
+            this.loadSavedOrderBtn.Size = new System.Drawing.Size(220, 42);
             this.loadSavedOrderBtn.TabIndex = 1;
             this.loadSavedOrderBtn.Text = "&Load saved order";
             this.loadSavedOrderBtn.UseVisualStyleBackColor = true;
+            this.loadSavedOrderBtn.Click += new System.EventHandler(this.loadSavedOrderBtn_Click);
             // 
             // exitBtn
             // 
-            this.exitBtn.Location = new System.Drawing.Point(178, 196);
+            this.exitBtn.Location = new System.Drawing.Point(326, 362);
+            this.exitBtn.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.exitBtn.Name = "exitBtn";
-            this.exitBtn.Size = new System.Drawing.Size(120, 23);
+            this.exitBtn.Size = new System.Drawing.Size(220, 42);
             this.exitBtn.TabIndex = 2;
             this.exitBtn.Text = "&Exit";
             this.exitBtn.UseVisualStyleBackColor = true;
@@ -64,12 +68,13 @@
             // 
             // StartForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(584, 361);
+            this.ClientSize = new System.Drawing.Size(1071, 666);
             this.Controls.Add(this.exitBtn);
             this.Controls.Add(this.loadSavedOrderBtn);
             this.Controls.Add(this.startNewOrderBtn);
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.MaximizeBox = false;
             this.Name = "StartForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
