@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace DollarComputers
+namespace DollarComputers.Views
 {
     public partial class StartForm : Form
     {
@@ -35,7 +35,31 @@ namespace DollarComputers
 
         private void loadSavedOrderBtn_Click(object sender, EventArgs e)
         {
-            Program.mainForm.Show();
+            Program.productInfoForm.Show();
+            this.Hide();
+
+        }
+
+        private void mainMenuButton_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void selectFormButton_Click(object sender, EventArgs e)
+        {
+            Program.selectForm.Show();
+            this.Hide();
+        }
+
+        private void productInfoButton_Click(object sender, EventArgs e)
+        {
+            Program.productInfoForm.Show();
+            this.Hide();
+        }
+
+        private void orderFormButton_Click(object sender, EventArgs e)
+        {
+            Program.orderForm.Show();
             this.Hide();
         }
     }

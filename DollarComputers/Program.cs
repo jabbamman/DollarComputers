@@ -1,8 +1,11 @@
-﻿using System;
+﻿using DollarComputers.Models;
+using DollarComputers.Views;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace DollarComputers
 {
@@ -18,14 +21,15 @@ namespace DollarComputers
 
     static class Program
     {
+        // Static members 
         public static SpalshForm spalshForm;
         public static OrderForm orderForm;
         public static ProductInfoForm productInfoForm;
         public static SelectForm selectForm;
         public static StartForm startForm;
         public static AboutBox aboutBox;
-        public static MainForm mainForm;
-        public static ProductInfoClass ProductInfoClass;
+        public static Product product;
+        
      
 
         /// <summary>
@@ -36,15 +40,14 @@ namespace DollarComputers
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-
+            // Instantiate the forms 
             spalshForm = new SpalshForm();
             orderForm = new OrderForm();
             productInfoForm = new ProductInfoForm();
             selectForm = new SelectForm();
             startForm = new StartForm();
             aboutBox = new AboutBox();
-            mainForm = new MainForm();
-            ProductInfoClass = new ProductInfoClass();
+            product = new Product();
             Application.Run(new SpalshForm());
         }
     }

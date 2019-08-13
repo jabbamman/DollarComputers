@@ -33,5 +33,16 @@ namespace DollarComputers.Properties {
                 return ((string)(this["DollarComputerConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=DollarComputers;Integrated Sec" +
+            "urity=True")]
+        public string DollarComputersConnectionString {
+            get {
+                return ((string)(this["DollarComputersConnectionString"]));
+            }
+        }
     }
 }

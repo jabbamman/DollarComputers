@@ -7,7 +7,7 @@ using System.Reflection;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace DollarComputers
+namespace DollarComputers.Views
 {
     partial class AboutBox : Form
     {
@@ -101,5 +101,10 @@ namespace DollarComputers
             }
         }
         #endregion
+
+        private void AboutBox_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

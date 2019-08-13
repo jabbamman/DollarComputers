@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace DollarComputers
+namespace DollarComputers.Views
 {
     public partial class SpalshForm : Form
     {
