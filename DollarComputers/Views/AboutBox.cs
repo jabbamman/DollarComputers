@@ -6,7 +6,12 @@ using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+/*
+ * Student Name: Mohamed A. Ali 
+ * Student ID: 301036444
+ * Description: this is an about box shows information about the application and the company 
+ * 
+ */
 namespace DollarComputers.Views
 {
     partial class AboutBox : Form
@@ -109,6 +114,7 @@ namespace DollarComputers.Views
 
         private void okButton_Click(object sender, EventArgs e)
         {
+            //Hiding the about box 
             this.Hide();
 
         }

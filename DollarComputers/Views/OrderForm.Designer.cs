@@ -52,6 +52,7 @@
             this.priceLabel = new System.Windows.Forms.Label();
             this.orderFormMenuStrip = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.printToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.backToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -60,14 +61,19 @@
             this.productPrintForm = new Microsoft.VisualBasic.PowerPacks.Printing.PrintForm(this.components);
             this.leftNavPanel = new System.Windows.Forms.Panel();
             this.logoPanel = new System.Windows.Forms.Panel();
+            this.iconPictureBox = new System.Windows.Forms.PictureBox();
             this.DollarComputerLabel = new System.Windows.Forms.Label();
             this.mainMenuButton = new System.Windows.Forms.Button();
             this.orderFormButton = new System.Windows.Forms.Button();
             this.productInfoButton = new System.Windows.Forms.Button();
             this.selectFormButton = new System.Windows.Forms.Button();
             this.headerPanel = new System.Windows.Forms.Panel();
+            this.userPictureBox = new System.Windows.Forms.PictureBox();
+            this.HomePictureBox = new System.Windows.Forms.PictureBox();
             this.DashboardLabel = new System.Windows.Forms.Label();
+            this.logOutPictureBox = new System.Windows.Forms.PictureBox();
             this.mainPanel = new System.Windows.Forms.Panel();
+            this.PCPictureBox = new System.Windows.Forms.PictureBox();
             this.cancelButton = new System.Windows.Forms.Button();
             this.backButton = new System.Windows.Forms.Button();
             this.productInfogroupBox = new System.Windows.Forms.GroupBox();
@@ -79,26 +85,21 @@
             this.ConditionTextBox = new System.Windows.Forms.TextBox();
             this.manufacturerLabel = new System.Windows.Forms.Label();
             this.platformLabel = new System.Windows.Forms.Label();
-            this.iconPictureBox = new System.Windows.Forms.PictureBox();
-            this.userPictureBox = new System.Windows.Forms.PictureBox();
-            this.HomePictureBox = new System.Windows.Forms.PictureBox();
-            this.logOutPictureBox = new System.Windows.Forms.PictureBox();
-            this.printToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.PCPictureBox = new System.Windows.Forms.PictureBox();
             this.LaptopPictureBox = new System.Windows.Forms.PictureBox();
+            this.FinishButton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.yourPriceGroupBox.SuspendLayout();
             this.orderFormMenuStrip.SuspendLayout();
             this.leftNavPanel.SuspendLayout();
             this.logoPanel.SuspendLayout();
-            this.headerPanel.SuspendLayout();
-            this.mainPanel.SuspendLayout();
-            this.productInfogroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox)).BeginInit();
+            this.headerPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.userPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.HomePictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logOutPictureBox)).BeginInit();
+            this.mainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.PCPictureBox)).BeginInit();
+            this.productInfogroupBox.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LaptopPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
@@ -349,10 +350,20 @@
             this.fileToolStripMenuItem1.Size = new System.Drawing.Size(37, 19);
             this.fileToolStripMenuItem1.Text = "&File";
             // 
+            // printToolStripMenuItem1
+            // 
+            this.printToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("printToolStripMenuItem1.Image")));
+            this.printToolStripMenuItem1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.printToolStripMenuItem1.Name = "printToolStripMenuItem1";
+            this.printToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
+            this.printToolStripMenuItem1.Size = new System.Drawing.Size(192, 34);
+            this.printToolStripMenuItem1.Text = "&Print";
+            this.printToolStripMenuItem1.Click += new System.EventHandler(this.printToolStripMenuItem1_Click);
+            // 
             // exitToolStripMenuItem1
             // 
             this.exitToolStripMenuItem1.Name = "exitToolStripMenuItem1";
-            this.exitToolStripMenuItem1.Size = new System.Drawing.Size(140, 22);
+            this.exitToolStripMenuItem1.Size = new System.Drawing.Size(152, 34);
             this.exitToolStripMenuItem1.Text = "E&xit";
             this.exitToolStripMenuItem1.Click += new System.EventHandler(this.cancelButton_Click);
             // 
@@ -420,6 +431,17 @@
             this.logoPanel.Name = "logoPanel";
             this.logoPanel.Size = new System.Drawing.Size(155, 42);
             this.logoPanel.TabIndex = 6;
+            // 
+            // iconPictureBox
+            // 
+            this.iconPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("iconPictureBox.Image")));
+            this.iconPictureBox.Location = new System.Drawing.Point(7, 11);
+            this.iconPictureBox.Margin = new System.Windows.Forms.Padding(1);
+            this.iconPictureBox.Name = "iconPictureBox";
+            this.iconPictureBox.Size = new System.Drawing.Size(17, 20);
+            this.iconPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.iconPictureBox.TabIndex = 2;
+            this.iconPictureBox.TabStop = false;
             // 
             // DollarComputerLabel
             // 
@@ -508,6 +530,29 @@
             this.headerPanel.Size = new System.Drawing.Size(629, 40);
             this.headerPanel.TabIndex = 17;
             // 
+            // userPictureBox
+            // 
+            this.userPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("userPictureBox.Image")));
+            this.userPictureBox.Location = new System.Drawing.Point(28, 16);
+            this.userPictureBox.Margin = new System.Windows.Forms.Padding(1);
+            this.userPictureBox.Name = "userPictureBox";
+            this.userPictureBox.Size = new System.Drawing.Size(17, 20);
+            this.userPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.userPictureBox.TabIndex = 14;
+            this.userPictureBox.TabStop = false;
+            // 
+            // HomePictureBox
+            // 
+            this.HomePictureBox.Image = ((System.Drawing.Image)(resources.GetObject("HomePictureBox.Image")));
+            this.HomePictureBox.Location = new System.Drawing.Point(8, 16);
+            this.HomePictureBox.Margin = new System.Windows.Forms.Padding(1);
+            this.HomePictureBox.Name = "HomePictureBox";
+            this.HomePictureBox.Size = new System.Drawing.Size(17, 20);
+            this.HomePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.HomePictureBox.TabIndex = 12;
+            this.HomePictureBox.TabStop = false;
+            this.HomePictureBox.Click += new System.EventHandler(this.HomePictureBox_Click);
+            // 
             // DashboardLabel
             // 
             this.DashboardLabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -518,8 +563,21 @@
             this.DashboardLabel.TabIndex = 13;
             this.DashboardLabel.Text = "Order Info";
             // 
+            // logOutPictureBox
+            // 
+            this.logOutPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("logOutPictureBox.Image")));
+            this.logOutPictureBox.Location = new System.Drawing.Point(597, 14);
+            this.logOutPictureBox.Margin = new System.Windows.Forms.Padding(1);
+            this.logOutPictureBox.Name = "logOutPictureBox";
+            this.logOutPictureBox.Size = new System.Drawing.Size(17, 20);
+            this.logOutPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.logOutPictureBox.TabIndex = 11;
+            this.logOutPictureBox.TabStop = false;
+            this.logOutPictureBox.Click += new System.EventHandler(this.cancelButton_Click);
+            // 
             // mainPanel
             // 
+            this.mainPanel.Controls.Add(this.FinishButton);
             this.mainPanel.Controls.Add(this.PCPictureBox);
             this.mainPanel.Controls.Add(this.cancelButton);
             this.mainPanel.Controls.Add(this.backButton);
@@ -535,10 +593,23 @@
             this.mainPanel.TabIndex = 18;
             this.mainPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.mainPanel_Paint);
             // 
+            // PCPictureBox
+            // 
+            this.PCPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.PCPictureBox.Image = global::DollarComputers.Properties.Resources.PC;
+            this.PCPictureBox.Location = new System.Drawing.Point(563, 114);
+            this.PCPictureBox.Margin = new System.Windows.Forms.Padding(8, 6, 8, 6);
+            this.PCPictureBox.Name = "PCPictureBox";
+            this.PCPictureBox.Size = new System.Drawing.Size(155, 109);
+            this.PCPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.PCPictureBox.TabIndex = 18;
+            this.PCPictureBox.TabStop = false;
+            this.PCPictureBox.Visible = false;
+            // 
             // cancelButton
             // 
             this.cancelButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cancelButton.Location = new System.Drawing.Point(609, 492);
+            this.cancelButton.Location = new System.Drawing.Point(607, 491);
             this.cancelButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(67, 27);
@@ -550,7 +621,7 @@
             // backButton
             // 
             this.backButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.backButton.Location = new System.Drawing.Point(695, 492);
+            this.backButton.Location = new System.Drawing.Point(515, 491);
             this.backButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.backButton.Name = "backButton";
             this.backButton.Size = new System.Drawing.Size(67, 27);
@@ -653,75 +724,6 @@
             this.platformLabel.TabIndex = 1;
             this.platformLabel.Text = "Platform";
             // 
-            // iconPictureBox
-            // 
-            this.iconPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("iconPictureBox.Image")));
-            this.iconPictureBox.Location = new System.Drawing.Point(7, 11);
-            this.iconPictureBox.Margin = new System.Windows.Forms.Padding(1);
-            this.iconPictureBox.Name = "iconPictureBox";
-            this.iconPictureBox.Size = new System.Drawing.Size(17, 20);
-            this.iconPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.iconPictureBox.TabIndex = 2;
-            this.iconPictureBox.TabStop = false;
-            // 
-            // userPictureBox
-            // 
-            this.userPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("userPictureBox.Image")));
-            this.userPictureBox.Location = new System.Drawing.Point(28, 16);
-            this.userPictureBox.Margin = new System.Windows.Forms.Padding(1);
-            this.userPictureBox.Name = "userPictureBox";
-            this.userPictureBox.Size = new System.Drawing.Size(17, 20);
-            this.userPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.userPictureBox.TabIndex = 14;
-            this.userPictureBox.TabStop = false;
-            // 
-            // HomePictureBox
-            // 
-            this.HomePictureBox.Image = ((System.Drawing.Image)(resources.GetObject("HomePictureBox.Image")));
-            this.HomePictureBox.Location = new System.Drawing.Point(8, 16);
-            this.HomePictureBox.Margin = new System.Windows.Forms.Padding(1);
-            this.HomePictureBox.Name = "HomePictureBox";
-            this.HomePictureBox.Size = new System.Drawing.Size(17, 20);
-            this.HomePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.HomePictureBox.TabIndex = 12;
-            this.HomePictureBox.TabStop = false;
-            this.HomePictureBox.Click += new System.EventHandler(this.HomePictureBox_Click);
-            // 
-            // logOutPictureBox
-            // 
-            this.logOutPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("logOutPictureBox.Image")));
-            this.logOutPictureBox.Location = new System.Drawing.Point(597, 14);
-            this.logOutPictureBox.Margin = new System.Windows.Forms.Padding(1);
-            this.logOutPictureBox.Name = "logOutPictureBox";
-            this.logOutPictureBox.Size = new System.Drawing.Size(17, 20);
-            this.logOutPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.logOutPictureBox.TabIndex = 11;
-            this.logOutPictureBox.TabStop = false;
-            this.logOutPictureBox.Click += new System.EventHandler(this.cancelButton_Click);
-            // 
-            // printToolStripMenuItem1
-            // 
-            this.printToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("printToolStripMenuItem1.Image")));
-            this.printToolStripMenuItem1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.printToolStripMenuItem1.Name = "printToolStripMenuItem1";
-            this.printToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.P)));
-            this.printToolStripMenuItem1.Size = new System.Drawing.Size(140, 22);
-            this.printToolStripMenuItem1.Text = "&Print";
-            this.printToolStripMenuItem1.Click += new System.EventHandler(this.printToolStripMenuItem1_Click);
-            // 
-            // PCPictureBox
-            // 
-            this.PCPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.PCPictureBox.Image = global::DollarComputers.Properties.Resources.PC;
-            this.PCPictureBox.Location = new System.Drawing.Point(563, 114);
-            this.PCPictureBox.Margin = new System.Windows.Forms.Padding(8, 6, 8, 6);
-            this.PCPictureBox.Name = "PCPictureBox";
-            this.PCPictureBox.Size = new System.Drawing.Size(155, 109);
-            this.PCPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.PCPictureBox.TabIndex = 18;
-            this.PCPictureBox.TabStop = false;
-            this.PCPictureBox.Visible = false;
-            // 
             // LaptopPictureBox
             // 
             this.LaptopPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -734,6 +736,18 @@
             this.LaptopPictureBox.TabIndex = 10;
             this.LaptopPictureBox.TabStop = false;
             this.LaptopPictureBox.Visible = false;
+            // 
+            // FinishButton
+            // 
+            this.FinishButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FinishButton.Location = new System.Drawing.Point(695, 491);
+            this.FinishButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.FinishButton.Name = "FinishButton";
+            this.FinishButton.Size = new System.Drawing.Size(67, 27);
+            this.FinishButton.TabIndex = 19;
+            this.FinishButton.Text = "&Finish";
+            this.FinishButton.UseVisualStyleBackColor = true;
+            this.FinishButton.Click += new System.EventHandler(this.FinishButton_Click_1);
             // 
             // OrderForm
             // 
@@ -766,15 +780,15 @@
             this.orderFormMenuStrip.PerformLayout();
             this.leftNavPanel.ResumeLayout(false);
             this.logoPanel.ResumeLayout(false);
-            this.headerPanel.ResumeLayout(false);
-            this.mainPanel.ResumeLayout(false);
-            this.productInfogroupBox.ResumeLayout(false);
-            this.productInfogroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox)).EndInit();
+            this.headerPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.userPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.HomePictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.logOutPictureBox)).EndInit();
+            this.mainPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.PCPictureBox)).EndInit();
+            this.productInfogroupBox.ResumeLayout(false);
+            this.productInfogroupBox.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.LaptopPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -838,5 +852,6 @@
         private System.Windows.Forms.ToolStripMenuItem printToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem1;
         private System.Windows.Forms.PictureBox PCPictureBox;
+        private System.Windows.Forms.Button FinishButton;
     }
 }

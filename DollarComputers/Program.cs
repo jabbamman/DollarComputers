@@ -6,20 +6,17 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+/// <summary>
 
+/* Student Name: Mohamed A.Ali
+ * Student ID: 301036444
+ * Description: This is a Dollarcomputers sales aplication, contains of 
+ * five forms: Spalsh - Start Form - Select Form - Product info form - order form
+*/
+/// </summary>
 namespace DollarComputers
 {
-    /// <summary>
-    /// Project Updates: 
-    /// 22 JJuly 2019: Initial Commit .. Creating All The forms.
-    /// 23 July 2019: Finishing The Design of The Forms and controls
-    /// 25 July 2019: Connect the SelectForm to db.
-    /// 
-    /// </summary>
-
-
-
-    static class Program
+      static class Program
     {
         // Static members 
         public static SpalshForm spalshForm;

@@ -1,14 +1,12 @@
 ﻿using DollarComputers.Models;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Data.Entity;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+
+/* Student Name: Mohamed A.Ali
+ * Student ID: 301036444
+ * Description: connected to product sql database, where the user selects computer hardware.
+*/
 
 namespace DollarComputers.Views
 {
@@ -20,6 +18,7 @@ namespace DollarComputers.Views
         }
         private void SelectForm_Load(object sender, EventArgs e)
         {
+            //connecting the datasource 
             using (var db = new DollarComputersContext())
             {
                 db.products.Load();
@@ -36,13 +35,16 @@ namespace DollarComputers.Views
 
         private void cancelButton_Click(object sender, EventArgs e)
         {
+            // exiting the application 
             Application.Exit();
 
         }
 
         private void mainMenuButton_Click(object sender, EventArgs e)
         {
+            //Showing the Start Form 
             Program.startForm.Show();
+            //Hide Selec form
             this.Hide();
         }
 
@@ -53,13 +55,16 @@ namespace DollarComputers.Views
 
         private void productInfoButton_Click(object sender, EventArgs e)
         {
+            // condition to make sure that the user selected a computer to be able to move to the product info form 
             if (selectionLable.Text =="")
             {
                 MessageBox.Show("You did not select any product","Error");
             }
             else
             {
+                // Showing Product Info Form
                 Program.productInfoForm.Show();
+                // Hide Select Form 
                 this.Hide();
             }
             
@@ -67,6 +72,7 @@ namespace DollarComputers.Views
 
         private void orderFormButton_Click(object sender, EventArgs e)
         {
+            // condition to make sure that the user selected a computer to be able to move to the order form 
             if (selectionLable.Text == "")
             {
                 MessageBox.Show("You did not select any product", "Error");
@@ -94,12 +100,15 @@ namespace DollarComputers.Views
             var cells = rows[rowIndex].Cells;
             rows[rowIndex].Selected = true;
             string outputstring = string.Empty;
-
+            // Assigning (Manufacturer - Cose - Model) from selected row to output string  
             outputstring += cells[2].Value.ToString() + "   ";
             outputstring += cells[3].Value.ToString() + "   ";
             outputstring += cells[1].Value.ToString() + "   ";
+            // Assigning outputstring to selectionLabel
             selectionLable.Text = outputstring;
+            //Enabling the next Button
             nextButton.Enabled = true;
+            //Calling the method that assign the data to product class - enum 
             AddingFieldsToEnum(cells);
 
         
@@ -116,6 +125,7 @@ namespace DollarComputers.Views
 
         private static void AddingFieldsToEnum(DataGridViewCellCollection cells)
         {
+            // assign the data to product class - enum 
             Program.product.productID = short.Parse(cells[(int)(ProductFields.PRODUCT_ID)].Value.ToString());
             Program.product.cost = decimal.Parse(cells[(int)(ProductFields.COST)].Value.ToString());
             Program.product.manufacturer = cells[(int)(ProductFields.MANUFACTURER)].Value.ToString();
@@ -157,7 +167,9 @@ namespace DollarComputers.Views
 
         private void HomePictureBox_Click(object sender, EventArgs e)
         {
+            // Showing Start Form 
             Program.startForm.Show();
+            // Hiding Select Form
             this.Hide(); 
             
         }

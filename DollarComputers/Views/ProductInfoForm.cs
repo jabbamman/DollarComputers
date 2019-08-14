@@ -8,7 +8,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+/* Student Name: Mohamed A.Ali
+ * Student ID: 301036444
+ * Description: where the computer hardware components are displayed and where the user has the option to load or save the component configuration
+*/
 namespace DollarComputers.Views
 {
     public partial class ProductInfoForm : Form
@@ -20,38 +23,42 @@ namespace DollarComputers.Views
 
         private void ProductInfoForm_FormClosing(object sender, FormClosingEventArgs e)
         {
+            // Exiting the Application
             Application.Exit();
         }
 
         private void nextButton_Click(object sender, EventArgs e)
         {
+            //Showing Order Form 
             Program.orderForm.Show();
+            //Hiding Product Info Form 
             this.Hide();
         }
 
         private void selectAnotherProductButton_Click(object sender, EventArgs e)
         {
+            //Showing Select Form 
             Program.selectForm.Show();
+            //Hiding Product Info Form 
             this.Hide();
 
         }
 
         private void cancelButton_Click(object sender, EventArgs e)
         {
+            //Exiting the Application 
             Application.Exit();
         }
 
         private void ProductInfoForm_Activated(object sender, EventArgs e)
         {
-            
-                CallinDataToFields();
-          
-            
-
+            // Calling the Method that Assigning Data to controls  
+            CallinDataToFields();
         }
 
         private void CallinDataToFields()
         {
+            // Assigning Data to controls
             productIDTextBox.Text = Program.product.productID.ToString();
             conditionTextBox.Text = Program.product.condition.ToString();
             costTextBox.Text = Convert.ToDecimal(Program.product.cost).ToString("C2");
@@ -81,13 +88,17 @@ namespace DollarComputers.Views
 
         private void mainMenuButton_Click(object sender, EventArgs e)
         {
+            // Showing Start Form 
             Program.startForm.Show();
+            // Hiding Product Info Form 
             this.Hide();
         }
 
         private void selectFormButton_Click(object sender, EventArgs e)
         {
+            //Showing Select Form 
             Program.selectForm.Show();
+            //Hiding Product Info Form 
             this.Hide();
         }
 
@@ -98,13 +109,17 @@ namespace DollarComputers.Views
 
         private void orderFormButton_Click(object sender, EventArgs e)
         {
+            //Showing Order Form 
             Program.orderForm.Show();
+            //Hiding Product Info Form 
             this.Hide();
         }
 
         private void HomePictureBox_Click(object sender, EventArgs e)
         {
+            //Showing Start Form 
             Program.startForm.Show();
+            //Hiding Product Info Form 
             this.Hide();
         }
 
@@ -176,7 +191,6 @@ namespace DollarComputers.Views
         private void openToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             // Configure ProductOpenFile Dialogue
-
             ProductOpenFileDialog.FileName = "Product.txt";
             ProductOpenFileDialog.InitialDirectory = Directory.GetCurrentDirectory();
             ProductOpenFileDialog.Filter = "Text File (*.txt)|*txt|All Files (*.*)|*.*";
@@ -190,7 +204,7 @@ namespace DollarComputers.Views
                     using (StreamReader inputStream = new StreamReader(
                     File.Open("ProductInfo.txt", FileMode.Open)))
                     {
-
+                        // getting content - From the file 
                         Program.product.productID = short.Parse(inputStream.ReadLine());
                         Program.product.cost = decimal.Parse(inputStream.ReadLine()); ;
                         Program.product.manufacturer = inputStream.ReadLine();
@@ -235,6 +249,7 @@ namespace DollarComputers.Views
                 }
                 catch (IOException exception)
                 {
+                    // Error Message if failed to get the file
                     MessageBox.Show("Error:" + exception.Message, "Error Message",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 }
             }
