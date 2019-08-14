@@ -106,5 +106,11 @@ namespace DollarComputers.Views
         {
 
         }
+
+        private void okButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+
+        }
     }
 }

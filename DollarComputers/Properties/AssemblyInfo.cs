@@ -6,9 +6,9 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("DollarComputers")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Your business goals are unique. Build your hospitality POS system with a partner who responds to fit your evolving needs. Your payments engine is proven, reliable, and precisely designed with a deep appreciation for your front of house. E-mail: pt.jabba@gmail.com Phone: (647)-568-4802")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("DollarComputers")]
 [assembly: AssemblyProduct("DollarComputers")]
 [assembly: AssemblyCopyright("Copyright ©  2019")]
 [assembly: AssemblyTrademark("")]

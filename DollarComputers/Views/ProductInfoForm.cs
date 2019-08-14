@@ -43,6 +43,15 @@ namespace DollarComputers.Views
 
         private void ProductInfoForm_Activated(object sender, EventArgs e)
         {
+            
+                CallinDataToFields();
+          
+            
+
+        }
+
+        private void CallinDataToFields()
+        {
             productIDTextBox.Text = Program.product.productID.ToString();
             conditionTextBox.Text = Program.product.condition.ToString();
             costTextBox.Text = Convert.ToDecimal(Program.product.cost).ToString("C2");
@@ -63,11 +72,6 @@ namespace DollarComputers.Views
             hddTextBox.Text = Program.product.HDD_size.ToString();
             gpuTypeTextBox.Text = Program.product.GPU_Type.ToString();
             webCamTextBox.Text = Program.product.webcam.ToString();
-
-
-
-
-
         }
 
         private void ProductInfoForm_Load(object sender, EventArgs e)
@@ -106,15 +110,25 @@ namespace DollarComputers.Views
 
         private void saveToolStripMenuItem_Click(object sender, EventArgs e)
         {
-          using (StreamWriter outputStream = new StreamWriter(File.Open("ProductInfo.txt", FileMode.Create)))
+            // configure the ProductSaveFile Dialogue
+            ProductSaveFileDialog.FileName = "Product.txt";
+            ProductSaveFileDialog.InitialDirectory = Directory.GetCurrentDirectory();
+            ProductSaveFileDialog.Filter = "Text Files (*.txt)|*.txt| All Files (*.*)|*.*";
+            // Open the file Dialogue
+            var result = ProductSaveFileDialog.ShowDialog();
+            if (result != DialogResult.Cancel)
+            {
+                // open the stream for writing 
+                using (StreamWriter outputStream = new StreamWriter(File.Open(ProductSaveFileDialog.FileName, FileMode.Create)))
                 {
-                    outputStream.WriteLine(Program.product.productID);
-                    outputStream.WriteLine(Program.product.cost);
+                    // write content - string type - to the file 
+                    outputStream.WriteLine(Program.product.productID.ToString());
+                    outputStream.WriteLine(Program.product.cost.ToString());
                     outputStream.WriteLine(Program.product.manufacturer);
                     outputStream.WriteLine(Program.product.model);
                     outputStream.WriteLine(Program.product.RAM_type);
                     outputStream.WriteLine(Program.product.RAM_size);
-               
+
                     outputStream.WriteLine(Program.product.displaytype);
                     outputStream.WriteLine(Program.product.screensize);
                     outputStream.WriteLine(Program.product.resolution);
@@ -145,68 +159,87 @@ namespace DollarComputers.Views
 
                     outputStream.WriteLine(Program.product.webcam);
 
+                    // Message to inform user saves successfully 
+                    MessageBox.Show("Saved Completed Successfully", "Save", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    // clean up 
                     outputStream.Close();
                     outputStream.Dispose();
                 }
+            }
+
+           
             
 
         }
 
         private void openToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            try
+            // Configure ProductOpenFile Dialogue
+
+            ProductOpenFileDialog.FileName = "Product.txt";
+            ProductOpenFileDialog.InitialDirectory = Directory.GetCurrentDirectory();
+            ProductOpenFileDialog.Filter = "Text File (*.txt)|*txt|All Files (*.*)|*.*";
+            // Open ProductOpenFile Dialogue 
+
+             var result = ProductOpenFileDialog.ShowDialog();
+            if (result !=DialogResult.Cancel)
             {
-                using (StreamReader inputStream = new StreamReader(
-                File.Open("ProductInfo.txt", FileMode.Open)))
+                try
                 {
-                 
-                    Program.product.productID = short.Parse(inputStream.ReadLine());
-                    Program.product.cost = decimal.Parse(inputStream.ReadLine()); ;
-                    Program.product.manufacturer = inputStream.ReadLine();
-                    Program.product.model = inputStream.ReadLine();
-                    Program.product.RAM_type = inputStream.ReadLine();
-                    Program.product.RAM_size = inputStream.ReadLine();
-      
-                    Program.product.displaytype = inputStream.ReadLine();
-                    Program.product.screensize = inputStream.ReadLine();
-                    Program.product.resolution = inputStream.ReadLine();
-                    Program.product.CPU_Class = inputStream.ReadLine();
-                    Program.product.CPU_brand = inputStream.ReadLine();
-                    Program.product.CPU_type = inputStream.ReadLine();
+                    using (StreamReader inputStream = new StreamReader(
+                    File.Open("ProductInfo.txt", FileMode.Open)))
+                    {
 
-                    Program.product.CPU_speed = inputStream.ReadLine();
-                    Program.product.CPU_number = inputStream.ReadLine();
-                    Program.product.condition = inputStream.ReadLine();
-                    Program.product.OS = inputStream.ReadLine();
-                    Program.product.platform = inputStream.ReadLine();
-                    Program.product.HDD_size = inputStream.ReadLine();
+                        Program.product.productID = short.Parse(inputStream.ReadLine());
+                        Program.product.cost = decimal.Parse(inputStream.ReadLine()); ;
+                        Program.product.manufacturer = inputStream.ReadLine();
+                        Program.product.model = inputStream.ReadLine();
+                        Program.product.RAM_type = inputStream.ReadLine();
+                        Program.product.RAM_size = inputStream.ReadLine();
 
-                    Program.product.HDD_speed = inputStream.ReadLine();
-                    Program.product.GPU_Type = inputStream.ReadLine();
-                    Program.product.optical_drive = inputStream.ReadLine();
-                    Program.product.Audio_type = inputStream.ReadLine();
-                    Program.product.LAN = inputStream.ReadLine();
-                    Program.product.WIFI = inputStream.ReadLine();
-                    
-                    Program.product.width = inputStream.ReadLine();
-                    Program.product.height = inputStream.ReadLine();
-                    Program.product.depth = inputStream.ReadLine();
-                    Program.product.weight = inputStream.ReadLine();
-                    Program.product.moust_type = inputStream.ReadLine();
-                    Program.product.power = inputStream.ReadLine();
+                        Program.product.displaytype = inputStream.ReadLine();
+                        Program.product.screensize = inputStream.ReadLine();
+                        Program.product.resolution = inputStream.ReadLine();
+                        Program.product.CPU_Class = inputStream.ReadLine();
+                        Program.product.CPU_brand = inputStream.ReadLine();
+                        Program.product.CPU_type = inputStream.ReadLine();
 
-                    Program.product.webcam = inputStream.ReadLine();
+                        Program.product.CPU_speed = inputStream.ReadLine();
+                        Program.product.CPU_number = inputStream.ReadLine();
+                        Program.product.condition = inputStream.ReadLine();
+                        Program.product.OS = inputStream.ReadLine();
+                        Program.product.platform = inputStream.ReadLine();
+                        Program.product.HDD_size = inputStream.ReadLine();
 
-                    inputStream.Close();
-                    inputStream.Dispose();
+                        Program.product.HDD_speed = inputStream.ReadLine();
+                        Program.product.GPU_Type = inputStream.ReadLine();
+                        Program.product.optical_drive = inputStream.ReadLine();
+                        Program.product.Audio_type = inputStream.ReadLine();
+                        Program.product.LAN = inputStream.ReadLine();
+                        Program.product.WIFI = inputStream.ReadLine();
+
+                        Program.product.width = inputStream.ReadLine();
+                        Program.product.height = inputStream.ReadLine();
+                        Program.product.depth = inputStream.ReadLine();
+                        Program.product.weight = inputStream.ReadLine();
+                        Program.product.moust_type = inputStream.ReadLine();
+                        Program.product.power = inputStream.ReadLine();
+
+                        Program.product.webcam = inputStream.ReadLine();
+
+                        inputStream.Close();
+                        inputStream.Dispose();
+                    }
+
                 }
-
-            }
-            catch (IOException exception)
-            {
-                MessageBox.Show("Error:" + exception);
+                catch (IOException exception)
+                {
+                    MessageBox.Show("Error:" + exception.Message, "Error Message",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                }
             }
         }
+            
     }
     
 }

@@ -53,14 +53,31 @@ namespace DollarComputers.Views
 
         private void productInfoButton_Click(object sender, EventArgs e)
         {
-            Program.productInfoForm.Show();
-            this.Hide();
+            if (selectionLable.Text =="")
+            {
+                MessageBox.Show("You did not select any product","Error");
+            }
+            else
+            {
+                Program.productInfoForm.Show();
+                this.Hide();
+            }
+            
         }
 
         private void orderFormButton_Click(object sender, EventArgs e)
         {
-            Program.orderForm.Show();
-            this.Hide();
+            if (selectionLable.Text == "")
+            {
+                MessageBox.Show("You did not select any product", "Error");
+            }
+            else
+
+            {
+                Program.orderForm.Show();
+                this.Hide();
+            }
+                
         }
 
         private void productsDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)

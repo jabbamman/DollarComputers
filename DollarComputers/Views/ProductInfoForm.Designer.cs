@@ -70,7 +70,9 @@
             this.selectAnotherProductButton = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.openToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator = new System.Windows.Forms.ToolStripSeparator();
+            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -78,34 +80,34 @@
             this.selectAnotherProductToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.leftNavPanel = new System.Windows.Forms.Panel();
             this.logoPanel = new System.Windows.Forms.Panel();
+            this.iconPictureBox = new System.Windows.Forms.PictureBox();
             this.DollarComputerLabel = new System.Windows.Forms.Label();
             this.mainMenuButton = new System.Windows.Forms.Button();
             this.orderFormButton = new System.Windows.Forms.Button();
             this.productInfoButton = new System.Windows.Forms.Button();
             this.selectFormButton = new System.Windows.Forms.Button();
             this.headerPanel = new System.Windows.Forms.Panel();
+            this.userPictureBox = new System.Windows.Forms.PictureBox();
+            this.HomePictureBox = new System.Windows.Forms.PictureBox();
             this.DashboardLabel = new System.Windows.Forms.Label();
+            this.logOutPictureBox = new System.Windows.Forms.PictureBox();
             this.button2 = new System.Windows.Forms.Button();
             this.mainPanel = new System.Windows.Forms.Panel();
             this.finishButton = new System.Windows.Forms.Button();
-            this.iconPictureBox = new System.Windows.Forms.PictureBox();
-            this.openToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.userPictureBox = new System.Windows.Forms.PictureBox();
-            this.HomePictureBox = new System.Windows.Forms.PictureBox();
-            this.logOutPictureBox = new System.Windows.Forms.PictureBox();
+            this.ProductSaveFileDialog = new System.Windows.Forms.SaveFileDialog();
+            this.ProductOpenFileDialog = new System.Windows.Forms.OpenFileDialog();
             this.headerGroupBox.SuspendLayout();
             this.productInfogroupBox.SuspendLayout();
             this.techSpecsGroupBox.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.leftNavPanel.SuspendLayout();
             this.logoPanel.SuspendLayout();
-            this.headerPanel.SuspendLayout();
-            this.mainPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox)).BeginInit();
+            this.headerPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.userPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.HomePictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logOutPictureBox)).BeginInit();
+            this.mainPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // headerGroupBox
@@ -129,7 +131,7 @@
             this.costTextBox.Location = new System.Drawing.Point(457, 24);
             this.costTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.costTextBox.Name = "costTextBox";
-            this.costTextBox.Size = new System.Drawing.Size(93, 23);
+            this.costTextBox.Size = new System.Drawing.Size(93, 41);
             this.costTextBox.TabIndex = 6;
             // 
             // conditionTextBox
@@ -137,7 +139,7 @@
             this.conditionTextBox.Location = new System.Drawing.Point(298, 24);
             this.conditionTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.conditionTextBox.Name = "conditionTextBox";
-            this.conditionTextBox.Size = new System.Drawing.Size(93, 23);
+            this.conditionTextBox.Size = new System.Drawing.Size(93, 41);
             this.conditionTextBox.TabIndex = 5;
             // 
             // productIDTextBox
@@ -145,7 +147,7 @@
             this.productIDTextBox.Location = new System.Drawing.Point(138, 25);
             this.productIDTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.productIDTextBox.Name = "productIDTextBox";
-            this.productIDTextBox.Size = new System.Drawing.Size(77, 23);
+            this.productIDTextBox.Size = new System.Drawing.Size(77, 41);
             this.productIDTextBox.TabIndex = 4;
             // 
             // costLabel
@@ -154,7 +156,7 @@
             this.costLabel.Location = new System.Drawing.Point(413, 28);
             this.costLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.costLabel.Name = "costLabel";
-            this.costLabel.Size = new System.Drawing.Size(36, 17);
+            this.costLabel.Size = new System.Drawing.Size(76, 36);
             this.costLabel.TabIndex = 3;
             this.costLabel.Text = "Cost";
             // 
@@ -164,7 +166,7 @@
             this.conditionLabel.Location = new System.Drawing.Point(223, 27);
             this.conditionLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.conditionLabel.Name = "conditionLabel";
-            this.conditionLabel.Size = new System.Drawing.Size(67, 17);
+            this.conditionLabel.Size = new System.Drawing.Size(143, 36);
             this.conditionLabel.TabIndex = 2;
             this.conditionLabel.Text = "Condition";
             // 
@@ -201,7 +203,7 @@
             this.modelTextBox.Location = new System.Drawing.Point(442, 53);
             this.modelTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.modelTextBox.Name = "modelTextBox";
-            this.modelTextBox.Size = new System.Drawing.Size(143, 23);
+            this.modelTextBox.Size = new System.Drawing.Size(143, 41);
             this.modelTextBox.TabIndex = 8;
             // 
             // modelLabel
@@ -210,7 +212,7 @@
             this.modelLabel.Location = new System.Drawing.Point(375, 56);
             this.modelLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.modelLabel.Name = "modelLabel";
-            this.modelLabel.Size = new System.Drawing.Size(46, 17);
+            this.modelLabel.Size = new System.Drawing.Size(97, 36);
             this.modelLabel.TabIndex = 7;
             this.modelLabel.Text = "Model";
             // 
@@ -219,7 +221,7 @@
             this.platformTextBox.Location = new System.Drawing.Point(133, 23);
             this.platformTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.platformTextBox.Name = "platformTextBox";
-            this.platformTextBox.Size = new System.Drawing.Size(142, 23);
+            this.platformTextBox.Size = new System.Drawing.Size(142, 41);
             this.platformTextBox.TabIndex = 6;
             // 
             // manufacturerTextBox
@@ -227,7 +229,7 @@
             this.manufacturerTextBox.Location = new System.Drawing.Point(133, 54);
             this.manufacturerTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.manufacturerTextBox.Name = "manufacturerTextBox";
-            this.manufacturerTextBox.Size = new System.Drawing.Size(142, 23);
+            this.manufacturerTextBox.Size = new System.Drawing.Size(142, 41);
             this.manufacturerTextBox.TabIndex = 5;
             // 
             // osTextBox
@@ -235,7 +237,7 @@
             this.osTextBox.Location = new System.Drawing.Point(442, 23);
             this.osTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.osTextBox.Name = "osTextBox";
-            this.osTextBox.Size = new System.Drawing.Size(143, 23);
+            this.osTextBox.Size = new System.Drawing.Size(143, 41);
             this.osTextBox.TabIndex = 4;
             // 
             // osLabel
@@ -244,7 +246,7 @@
             this.osLabel.Location = new System.Drawing.Point(376, 28);
             this.osLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.osLabel.Name = "osLabel";
-            this.osLabel.Size = new System.Drawing.Size(28, 17);
+            this.osLabel.Size = new System.Drawing.Size(57, 36);
             this.osLabel.TabIndex = 3;
             this.osLabel.Text = "OS";
             // 
@@ -254,7 +256,7 @@
             this.manufacturerLabel.Location = new System.Drawing.Point(8, 57);
             this.manufacturerLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.manufacturerLabel.Name = "manufacturerLabel";
-            this.manufacturerLabel.Size = new System.Drawing.Size(92, 17);
+            this.manufacturerLabel.Size = new System.Drawing.Size(190, 36);
             this.manufacturerLabel.TabIndex = 2;
             this.manufacturerLabel.Text = "Manufacturer";
             // 
@@ -301,7 +303,7 @@
             this.webCamTextBox.Location = new System.Drawing.Point(97, 155);
             this.webCamTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.webCamTextBox.Name = "webCamTextBox";
-            this.webCamTextBox.Size = new System.Drawing.Size(132, 23);
+            this.webCamTextBox.Size = new System.Drawing.Size(132, 41);
             this.webCamTextBox.TabIndex = 25;
             // 
             // gpuTypeTextBox
@@ -309,7 +311,7 @@
             this.gpuTypeTextBox.Location = new System.Drawing.Point(442, 117);
             this.gpuTypeTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.gpuTypeTextBox.Name = "gpuTypeTextBox";
-            this.gpuTypeTextBox.Size = new System.Drawing.Size(143, 23);
+            this.gpuTypeTextBox.Size = new System.Drawing.Size(143, 41);
             this.gpuTypeTextBox.TabIndex = 24;
             // 
             // hddTextBox
@@ -317,7 +319,7 @@
             this.hddTextBox.Location = new System.Drawing.Point(442, 83);
             this.hddTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.hddTextBox.Name = "hddTextBox";
-            this.hddTextBox.Size = new System.Drawing.Size(143, 23);
+            this.hddTextBox.Size = new System.Drawing.Size(143, 41);
             this.hddTextBox.TabIndex = 23;
             // 
             // webCamLabel
@@ -334,7 +336,7 @@
             this.cpuTypeTextBox.Location = new System.Drawing.Point(97, 92);
             this.cpuTypeTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.cpuTypeTextBox.Name = "cpuTypeTextBox";
-            this.cpuTypeTextBox.Size = new System.Drawing.Size(132, 23);
+            this.cpuTypeTextBox.Size = new System.Drawing.Size(132, 41);
             this.cpuTypeTextBox.TabIndex = 20;
             // 
             // cpuSpeedTextBox
@@ -342,7 +344,7 @@
             this.cpuSpeedTextBox.Location = new System.Drawing.Point(442, 52);
             this.cpuSpeedTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.cpuSpeedTextBox.Name = "cpuSpeedTextBox";
-            this.cpuSpeedTextBox.Size = new System.Drawing.Size(143, 23);
+            this.cpuSpeedTextBox.Size = new System.Drawing.Size(143, 41);
             this.cpuSpeedTextBox.TabIndex = 19;
             // 
             // cpuSpeedLabel
@@ -377,7 +379,7 @@
             this.cpuBrandTextBox.Location = new System.Drawing.Point(97, 60);
             this.cpuBrandTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.cpuBrandTextBox.Name = "cpuBrandTextBox";
-            this.cpuBrandTextBox.Size = new System.Drawing.Size(132, 23);
+            this.cpuBrandTextBox.Size = new System.Drawing.Size(132, 41);
             this.cpuBrandTextBox.TabIndex = 14;
             // 
             // cpuNumberTextBox
@@ -385,7 +387,7 @@
             this.cpuNumberTextBox.Location = new System.Drawing.Point(442, 23);
             this.cpuNumberTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.cpuNumberTextBox.Name = "cpuNumberTextBox";
-            this.cpuNumberTextBox.Size = new System.Drawing.Size(143, 23);
+            this.cpuNumberTextBox.Size = new System.Drawing.Size(143, 41);
             this.cpuNumberTextBox.TabIndex = 13;
             // 
             // cpuNumberLabel
@@ -420,7 +422,7 @@
             this.memoryTextBox.Location = new System.Drawing.Point(97, 27);
             this.memoryTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.memoryTextBox.Name = "memoryTextBox";
-            this.memoryTextBox.Size = new System.Drawing.Size(132, 23);
+            this.memoryTextBox.Size = new System.Drawing.Size(132, 41);
             this.memoryTextBox.TabIndex = 6;
             // 
             // lcdSizeTextBox
@@ -428,7 +430,7 @@
             this.lcdSizeTextBox.Location = new System.Drawing.Point(97, 121);
             this.lcdSizeTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.lcdSizeTextBox.Name = "lcdSizeTextBox";
-            this.lcdSizeTextBox.Size = new System.Drawing.Size(132, 23);
+            this.lcdSizeTextBox.Size = new System.Drawing.Size(132, 41);
             this.lcdSizeTextBox.TabIndex = 4;
             // 
             // lcdSizeLabel
@@ -456,7 +458,7 @@
             this.clickNextLabel.Location = new System.Drawing.Point(175, 458);
             this.clickNextLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.clickNextLabel.Name = "clickNextLabel";
-            this.clickNextLabel.Size = new System.Drawing.Size(233, 17);
+            this.clickNextLabel.Size = new System.Drawing.Size(496, 36);
             this.clickNextLabel.TabIndex = 4;
             this.clickNextLabel.Text = "Click Next to Confirm Your Selection";
             // 
@@ -502,7 +504,7 @@
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(784, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(784, 45);
             this.menuStrip1.TabIndex = 8;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -516,28 +518,48 @@
             this.toolStripSeparator2,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem1.Name = "fileToolStripMenuItem1";
-            this.fileToolStripMenuItem1.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem1.Size = new System.Drawing.Size(70, 41);
             this.fileToolStripMenuItem1.Text = "&File";
+            // 
+            // openToolStripMenuItem1
+            // 
+            this.openToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("openToolStripMenuItem1.Image")));
+            this.openToolStripMenuItem1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.openToolStripMenuItem1.Name = "openToolStripMenuItem1";
+            this.openToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
+            this.openToolStripMenuItem1.Size = new System.Drawing.Size(360, 42);
+            this.openToolStripMenuItem1.Text = "&Open";
+            this.openToolStripMenuItem1.Click += new System.EventHandler(this.openToolStripMenuItem1_Click);
             // 
             // toolStripSeparator
             // 
             this.toolStripSeparator.Name = "toolStripSeparator";
-            this.toolStripSeparator.Size = new System.Drawing.Size(143, 6);
+            this.toolStripSeparator.Size = new System.Drawing.Size(357, 6);
+            // 
+            // saveToolStripMenuItem
+            // 
+            this.saveToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("saveToolStripMenuItem.Image")));
+            this.saveToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
+            this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(360, 42);
+            this.saveToolStripMenuItem.Text = "&Save";
+            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(143, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(357, 6);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(143, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(357, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(360, 42);
             this.exitToolStripMenuItem.Text = "E&xit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.cancelButton_Click);
             // 
@@ -546,13 +568,13 @@
             this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.selectAnotherProductToolStripMenuItem});
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
+            this.editToolStripMenuItem.Size = new System.Drawing.Size(75, 41);
             this.editToolStripMenuItem.Text = "Edit";
             // 
             // selectAnotherProductToolStripMenuItem
             // 
             this.selectAnotherProductToolStripMenuItem.Name = "selectAnotherProductToolStripMenuItem";
-            this.selectAnotherProductToolStripMenuItem.Size = new System.Drawing.Size(196, 22);
+            this.selectAnotherProductToolStripMenuItem.Size = new System.Drawing.Size(395, 42);
             this.selectAnotherProductToolStripMenuItem.Text = "&Select Another Product";
             this.selectAnotherProductToolStripMenuItem.Click += new System.EventHandler(this.selectAnotherProductButton_Click);
             // 
@@ -581,6 +603,17 @@
             this.logoPanel.Name = "logoPanel";
             this.logoPanel.Size = new System.Drawing.Size(155, 41);
             this.logoPanel.TabIndex = 6;
+            // 
+            // iconPictureBox
+            // 
+            this.iconPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("iconPictureBox.Image")));
+            this.iconPictureBox.Location = new System.Drawing.Point(7, 11);
+            this.iconPictureBox.Margin = new System.Windows.Forms.Padding(1);
+            this.iconPictureBox.Name = "iconPictureBox";
+            this.iconPictureBox.Size = new System.Drawing.Size(17, 20);
+            this.iconPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.iconPictureBox.TabIndex = 2;
+            this.iconPictureBox.TabStop = false;
             // 
             // DollarComputerLabel
             // 
@@ -669,6 +702,29 @@
             this.headerPanel.Size = new System.Drawing.Size(634, 43);
             this.headerPanel.TabIndex = 21;
             // 
+            // userPictureBox
+            // 
+            this.userPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("userPictureBox.Image")));
+            this.userPictureBox.Location = new System.Drawing.Point(28, 16);
+            this.userPictureBox.Margin = new System.Windows.Forms.Padding(1);
+            this.userPictureBox.Name = "userPictureBox";
+            this.userPictureBox.Size = new System.Drawing.Size(17, 20);
+            this.userPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.userPictureBox.TabIndex = 14;
+            this.userPictureBox.TabStop = false;
+            // 
+            // HomePictureBox
+            // 
+            this.HomePictureBox.Image = ((System.Drawing.Image)(resources.GetObject("HomePictureBox.Image")));
+            this.HomePictureBox.Location = new System.Drawing.Point(8, 16);
+            this.HomePictureBox.Margin = new System.Windows.Forms.Padding(1);
+            this.HomePictureBox.Name = "HomePictureBox";
+            this.HomePictureBox.Size = new System.Drawing.Size(17, 20);
+            this.HomePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.HomePictureBox.TabIndex = 12;
+            this.HomePictureBox.TabStop = false;
+            this.HomePictureBox.Click += new System.EventHandler(this.HomePictureBox_Click);
+            // 
             // DashboardLabel
             // 
             this.DashboardLabel.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -678,6 +734,18 @@
             this.DashboardLabel.Size = new System.Drawing.Size(135, 24);
             this.DashboardLabel.TabIndex = 13;
             this.DashboardLabel.Text = "Product Info";
+            // 
+            // logOutPictureBox
+            // 
+            this.logOutPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("logOutPictureBox.Image")));
+            this.logOutPictureBox.Location = new System.Drawing.Point(597, 14);
+            this.logOutPictureBox.Margin = new System.Windows.Forms.Padding(1);
+            this.logOutPictureBox.Name = "logOutPictureBox";
+            this.logOutPictureBox.Size = new System.Drawing.Size(17, 20);
+            this.logOutPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.logOutPictureBox.TabIndex = 11;
+            this.logOutPictureBox.TabStop = false;
+            this.logOutPictureBox.Click += new System.EventHandler(this.cancelButton_Click);
             // 
             // button2
             // 
@@ -720,75 +788,13 @@
             this.finishButton.Text = "&Finish";
             this.finishButton.UseVisualStyleBackColor = true;
             // 
-            // iconPictureBox
+            // ProductOpenFileDialog
             // 
-            this.iconPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("iconPictureBox.Image")));
-            this.iconPictureBox.Location = new System.Drawing.Point(7, 11);
-            this.iconPictureBox.Margin = new System.Windows.Forms.Padding(1);
-            this.iconPictureBox.Name = "iconPictureBox";
-            this.iconPictureBox.Size = new System.Drawing.Size(17, 20);
-            this.iconPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.iconPictureBox.TabIndex = 2;
-            this.iconPictureBox.TabStop = false;
-            // 
-            // openToolStripMenuItem1
-            // 
-            this.openToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("openToolStripMenuItem1.Image")));
-            this.openToolStripMenuItem1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.openToolStripMenuItem1.Name = "openToolStripMenuItem1";
-            this.openToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.openToolStripMenuItem1.Size = new System.Drawing.Size(146, 22);
-            this.openToolStripMenuItem1.Text = "&Open";
-            this.openToolStripMenuItem1.Click += new System.EventHandler(this.openToolStripMenuItem1_Click);
-            // 
-            // saveToolStripMenuItem
-            // 
-            this.saveToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("saveToolStripMenuItem.Image")));
-            this.saveToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.S)));
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
-            this.saveToolStripMenuItem.Text = "&Save";
-            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
-            // 
-            // userPictureBox
-            // 
-            this.userPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("userPictureBox.Image")));
-            this.userPictureBox.Location = new System.Drawing.Point(28, 16);
-            this.userPictureBox.Margin = new System.Windows.Forms.Padding(1);
-            this.userPictureBox.Name = "userPictureBox";
-            this.userPictureBox.Size = new System.Drawing.Size(17, 20);
-            this.userPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.userPictureBox.TabIndex = 14;
-            this.userPictureBox.TabStop = false;
-            // 
-            // HomePictureBox
-            // 
-            this.HomePictureBox.Image = ((System.Drawing.Image)(resources.GetObject("HomePictureBox.Image")));
-            this.HomePictureBox.Location = new System.Drawing.Point(8, 16);
-            this.HomePictureBox.Margin = new System.Windows.Forms.Padding(1);
-            this.HomePictureBox.Name = "HomePictureBox";
-            this.HomePictureBox.Size = new System.Drawing.Size(17, 20);
-            this.HomePictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.HomePictureBox.TabIndex = 12;
-            this.HomePictureBox.TabStop = false;
-            this.HomePictureBox.Click += new System.EventHandler(this.HomePictureBox_Click);
-            // 
-            // logOutPictureBox
-            // 
-            this.logOutPictureBox.Image = ((System.Drawing.Image)(resources.GetObject("logOutPictureBox.Image")));
-            this.logOutPictureBox.Location = new System.Drawing.Point(597, 14);
-            this.logOutPictureBox.Margin = new System.Windows.Forms.Padding(1);
-            this.logOutPictureBox.Name = "logOutPictureBox";
-            this.logOutPictureBox.Size = new System.Drawing.Size(17, 20);
-            this.logOutPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.logOutPictureBox.TabIndex = 11;
-            this.logOutPictureBox.TabStop = false;
-            this.logOutPictureBox.Click += new System.EventHandler(this.cancelButton_Click);
+            this.ProductOpenFileDialog.FileName = "openFileDialog1";
             // 
             // ProductInfoForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(17F, 36F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
             this.ControlBox = false;
@@ -816,13 +822,13 @@
             this.menuStrip1.PerformLayout();
             this.leftNavPanel.ResumeLayout(false);
             this.logoPanel.ResumeLayout(false);
-            this.headerPanel.ResumeLayout(false);
-            this.mainPanel.ResumeLayout(false);
-            this.mainPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox)).EndInit();
+            this.headerPanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.userPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.HomePictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.logOutPictureBox)).EndInit();
+            this.mainPanel.ResumeLayout(false);
+            this.mainPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -895,5 +901,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem selectAnotherProductToolStripMenuItem;
+        private System.Windows.Forms.SaveFileDialog ProductSaveFileDialog;
+        private System.Windows.Forms.OpenFileDialog ProductOpenFileDialog;
     }
 }

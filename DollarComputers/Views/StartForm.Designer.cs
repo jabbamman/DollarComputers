@@ -47,10 +47,6 @@
             this.userPictureBox = new System.Windows.Forms.PictureBox();
             this.logOutPictureBox = new System.Windows.Forms.PictureBox();
             this.HomePictureBox = new System.Windows.Forms.PictureBox();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
             this.osLabel = new System.Windows.Forms.Label();
             this.webCamLabel = new System.Windows.Forms.Label();
@@ -70,6 +66,7 @@
             this.taxTextBox = new System.Windows.Forms.TextBox();
             this.productPrintForm = new Microsoft.VisualBasic.PowerPacks.Printing.PrintForm(this.components);
             this.mainPanel = new System.Windows.Forms.Panel();
+            this.ProductOpenFileDialog = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.leftNavPanel.SuspendLayout();
             this.logoPanel.SuspendLayout();
@@ -78,7 +75,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.userPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.logOutPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.HomePictureBox)).BeginInit();
-            this.menuStrip1.SuspendLayout();
             this.mainPanel.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -150,6 +146,7 @@
             this.orderFormButton.TabIndex = 4;
             this.orderFormButton.Text = "Order Form";
             this.orderFormButton.UseVisualStyleBackColor = false;
+            this.orderFormButton.Visible = false;
             this.orderFormButton.Click += new System.EventHandler(this.orderFormButton_Click);
             // 
             // productInfoButton
@@ -166,6 +163,7 @@
             this.productInfoButton.TabIndex = 3;
             this.productInfoButton.Text = "Product Info";
             this.productInfoButton.UseVisualStyleBackColor = false;
+            this.productInfoButton.Visible = false;
             this.productInfoButton.Click += new System.EventHandler(this.productInfoButton_Click);
             // 
             // leftNavPanel
@@ -177,10 +175,10 @@
             this.leftNavPanel.Controls.Add(this.selectFormButton);
             this.leftNavPanel.Controls.Add(this.logoPanel);
             this.leftNavPanel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.leftNavPanel.Location = new System.Drawing.Point(0, 24);
+            this.leftNavPanel.Location = new System.Drawing.Point(0, 0);
             this.leftNavPanel.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.leftNavPanel.Name = "leftNavPanel";
-            this.leftNavPanel.Size = new System.Drawing.Size(155, 537);
+            this.leftNavPanel.Size = new System.Drawing.Size(155, 561);
             this.leftNavPanel.TabIndex = 75;
             // 
             // mainMenuButton
@@ -197,7 +195,6 @@
             this.mainMenuButton.TabIndex = 5;
             this.mainMenuButton.Text = "Main Menu";
             this.mainMenuButton.UseVisualStyleBackColor = false;
-            this.mainMenuButton.Click += new System.EventHandler(this.mainMenuButton_Click);
             // 
             // selectFormButton
             // 
@@ -295,46 +292,13 @@
             this.HomePictureBox.TabIndex = 3;
             this.HomePictureBox.TabStop = false;
             // 
-            // menuStrip1
-            // 
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem2,
-            this.toolStripMenuItem1});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(784, 24);
-            this.menuStrip1.TabIndex = 74;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // toolStripMenuItem2
-            // 
-            this.toolStripMenuItem2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.openToolStripMenuItem});
-            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(37, 20);
-            this.toolStripMenuItem2.Text = "File";
-            // 
-            // openToolStripMenuItem
-            // 
-            this.openToolStripMenuItem.Name = "openToolStripMenuItem";
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(103, 22);
-            this.openToolStripMenuItem.Text = "Open";
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(39, 20);
-            this.toolStripMenuItem1.Text = "Edit";
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(-264, -2);
             this.label1.Margin = new System.Windows.Forms.Padding(12, 0, 12, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(212, 16);
+            this.label1.Size = new System.Drawing.Size(525, 36);
             this.label1.TabIndex = 62;
             this.label1.Text = "---------------------------------------------------";
             // 
@@ -344,7 +308,7 @@
             this.osLabel.Location = new System.Drawing.Point(-248, 295);
             this.osLabel.Margin = new System.Windows.Forms.Padding(12, 0, 12, 0);
             this.osLabel.Name = "osLabel";
-            this.osLabel.Size = new System.Drawing.Size(27, 16);
+            this.osLabel.Size = new System.Drawing.Size(57, 36);
             this.osLabel.TabIndex = 73;
             this.osLabel.Text = "OS";
             // 
@@ -354,7 +318,7 @@
             this.webCamLabel.Location = new System.Drawing.Point(-248, 256);
             this.webCamLabel.Margin = new System.Windows.Forms.Padding(12, 0, 12, 0);
             this.webCamLabel.Name = "webCamLabel";
-            this.webCamLabel.Size = new System.Drawing.Size(65, 16);
+            this.webCamLabel.Size = new System.Drawing.Size(137, 36);
             this.webCamLabel.TabIndex = 72;
             this.webCamLabel.Text = "WebCam";
             // 
@@ -364,7 +328,7 @@
             this.gpuTypeLabel.Location = new System.Drawing.Point(-248, 217);
             this.gpuTypeLabel.Margin = new System.Windows.Forms.Padding(12, 0, 12, 0);
             this.gpuTypeLabel.Name = "gpuTypeLabel";
-            this.gpuTypeLabel.Size = new System.Drawing.Size(72, 16);
+            this.gpuTypeLabel.Size = new System.Drawing.Size(154, 36);
             this.gpuTypeLabel.TabIndex = 71;
             this.gpuTypeLabel.Text = "GPU Type";
             // 
@@ -374,7 +338,7 @@
             this.hddLabel.Location = new System.Drawing.Point(-248, 167);
             this.hddLabel.Margin = new System.Windows.Forms.Padding(12, 0, 12, 0);
             this.hddLabel.Name = "hddLabel";
-            this.hddLabel.Size = new System.Drawing.Size(38, 16);
+            this.hddLabel.Size = new System.Drawing.Size(78, 36);
             this.hddLabel.TabIndex = 70;
             this.hddLabel.Text = "HDD";
             // 
@@ -384,7 +348,7 @@
             this.cpuSpeedLabel.Location = new System.Drawing.Point(-248, 128);
             this.cpuSpeedLabel.Margin = new System.Windows.Forms.Padding(12, 0, 12, 0);
             this.cpuSpeedLabel.Name = "cpuSpeedLabel";
-            this.cpuSpeedLabel.Size = new System.Drawing.Size(80, 16);
+            this.cpuSpeedLabel.Size = new System.Drawing.Size(172, 36);
             this.cpuSpeedLabel.TabIndex = 69;
             this.cpuSpeedLabel.Text = "CPU Speed";
             // 
@@ -394,7 +358,7 @@
             this.cpuNumberLabel.Location = new System.Drawing.Point(-248, 76);
             this.cpuNumberLabel.Margin = new System.Windows.Forms.Padding(12, 0, 12, 0);
             this.cpuNumberLabel.Name = "cpuNumberLabel";
-            this.cpuNumberLabel.Size = new System.Drawing.Size(87, 16);
+            this.cpuNumberLabel.Size = new System.Drawing.Size(191, 36);
             this.cpuNumberLabel.TabIndex = 68;
             this.cpuNumberLabel.Text = "CPU Number";
             // 
@@ -404,7 +368,7 @@
             this.taxLabel.Location = new System.Drawing.Point(-267, -38);
             this.taxLabel.Margin = new System.Windows.Forms.Padding(12, 0, 12, 0);
             this.taxLabel.Name = "taxLabel";
-            this.taxLabel.Size = new System.Drawing.Size(68, 16);
+            this.taxLabel.Size = new System.Drawing.Size(153, 36);
             this.taxLabel.TabIndex = 60;
             this.taxLabel.Text = "Tax (13%)";
             // 
@@ -414,7 +378,7 @@
             this.totalLabel.Location = new System.Drawing.Point(-267, 43);
             this.totalLabel.Margin = new System.Windows.Forms.Padding(12, 0, 12, 0);
             this.totalLabel.Name = "totalLabel";
-            this.totalLabel.Size = new System.Drawing.Size(39, 16);
+            this.totalLabel.Size = new System.Drawing.Size(81, 36);
             this.totalLabel.TabIndex = 58;
             this.totalLabel.Text = "Total";
             // 
@@ -451,7 +415,7 @@
             this.lcdSizeLabel.Location = new System.Drawing.Point(-248, -84);
             this.lcdSizeLabel.Margin = new System.Windows.Forms.Padding(12, 0, 12, 0);
             this.lcdSizeLabel.Name = "lcdSizeLabel";
-            this.lcdSizeLabel.Size = new System.Drawing.Size(63, 16);
+            this.lcdSizeLabel.Size = new System.Drawing.Size(140, 36);
             this.lcdSizeLabel.TabIndex = 63;
             this.lcdSizeLabel.Text = "LCD Size";
             this.lcdSizeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -461,7 +425,7 @@
             this.priceTextBox.Location = new System.Drawing.Point(-145, -98);
             this.priceTextBox.Margin = new System.Windows.Forms.Padding(12, 10, 12, 10);
             this.priceTextBox.Name = "priceTextBox";
-            this.priceTextBox.Size = new System.Drawing.Size(216, 22);
+            this.priceTextBox.Size = new System.Drawing.Size(216, 41);
             this.priceTextBox.TabIndex = 59;
             // 
             // priceLabel
@@ -489,7 +453,7 @@
             this.taxTextBox.Location = new System.Drawing.Point(-145, -47);
             this.taxTextBox.Margin = new System.Windows.Forms.Padding(12, 10, 12, 10);
             this.taxTextBox.Name = "taxTextBox";
-            this.taxTextBox.Size = new System.Drawing.Size(216, 22);
+            this.taxTextBox.Size = new System.Drawing.Size(216, 41);
             this.taxTextBox.TabIndex = 61;
             // 
             // productPrintForm
@@ -515,14 +479,17 @@
             this.mainPanel.Size = new System.Drawing.Size(784, 561);
             this.mainPanel.TabIndex = 77;
             // 
+            // ProductOpenFileDialog
+            // 
+            this.ProductOpenFileDialog.FileName = "openFileDialog1";
+            // 
             // StartForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(17F, 33F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(784, 561);
             this.ControlBox = false;
             this.Controls.Add(this.leftNavPanel);
-            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.osLabel);
             this.Controls.Add(this.webCamLabel);
@@ -558,8 +525,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.userPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.logOutPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.HomePictureBox)).EndInit();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.mainPanel.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -585,10 +550,6 @@
         private System.Windows.Forms.PictureBox userPictureBox;
         private System.Windows.Forms.PictureBox logOutPictureBox;
         private System.Windows.Forms.PictureBox HomePictureBox;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label osLabel;
         private System.Windows.Forms.Label webCamLabel;
@@ -608,5 +569,6 @@
         private System.Windows.Forms.TextBox taxTextBox;
         private Microsoft.VisualBasic.PowerPacks.Printing.PrintForm productPrintForm;
         private System.Windows.Forms.Panel mainPanel;
+        private System.Windows.Forms.OpenFileDialog ProductOpenFileDialog;
     }
 }
